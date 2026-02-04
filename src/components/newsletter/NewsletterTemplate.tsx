@@ -387,7 +387,7 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
           <tr>
             <td style={styles.header}>
               {logoUrl ? (
-                <img src={logoUrl} alt={content.firmName} style={{ maxWidth: '200px', marginBottom: '15px' }} />
+                <img src={logoUrl} alt={content.firmName} style={{ maxWidth: '200px', marginBottom: '15px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
               ) : (
                 <div style={{ marginBottom: '10px', color: '#c9a227', fontSize: '12px' }}>
                   [Logo placeholder - upload your logo]
