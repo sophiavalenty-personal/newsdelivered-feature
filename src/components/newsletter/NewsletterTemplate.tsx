@@ -393,7 +393,7 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
                   [Logo placeholder - upload your logo]
                 </div>
               )}
-              <p style={styles.headerText}>Prepared for</p>
+              
               <EditableText
                 value={content.preparedFor}
                 onChange={(v) => updateContent({ preparedFor: v })}
