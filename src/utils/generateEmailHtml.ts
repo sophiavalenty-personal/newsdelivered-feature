@@ -13,9 +13,14 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
   `).join('');
 
   const insightsHtml = content.keyInsights.map(insight => `
-    <div style="background-color: #f5f3ef; padding: 20px 25px; margin-bottom: 10px; border-left: 4px solid #c9a227;">
-      <p style="color: #2d3748; font-size: 14px; margin: 0; line-height: 1.6; font-family: Georgia, Times, serif;">${insight}</p>
-    </div>
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 10px;" role="presentation">
+      <tr>
+        <td style="width: 4px; background-color: #c9a227;"></td>
+        <td style="background-color: #f5f3ef; padding: 20px 25px;">
+          <p style="color: #2d3748; font-size: 14px; margin: 0; line-height: 1.6; font-family: Georgia, Times, serif;">${insight}</p>
+        </td>
+      </tr>
+    </table>
   `).join('');
 
   const stepsHtml = content.actionSteps.map((step, index) => `
@@ -135,7 +140,11 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
           <!-- Divider -->
           <tr>
             <td style="padding: 0 40px;">
-              <hr style="border: none; border-top: 1px solid #e2d9c8; margin: 0;">
+              <table cellpadding="0" cellspacing="0" border="0" width="100%" role="presentation">
+                <tr>
+                  <td style="border-top: 1px solid #e2d9c8; font-size: 1px; line-height: 1px;">&nbsp;</td>
+                </tr>
+              </table>
             </td>
           </tr>
 
@@ -168,10 +177,14 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
           <tr>
             <td style="background-color: #f5f3ef; padding: 30px 40px; text-align: center;">
               <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; font-family: Georgia, Times, serif;">A Moment of Levity</h2>
-              <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; border: 2px dashed #c9a227;">
-                <p style="color: #718096; font-size: 14px; margin: 0 0 10px 0; font-family: Arial, sans-serif;">[Pug-themed retirement meme goes here]</p>
-                <p style="color: #4a5568; font-size: 12px; margin: 0; font-family: Arial, sans-serif;">Inspired by The Pugville Chronicles</p>
-              </div>
+              <table cellpadding="0" cellspacing="0" border="0" width="100%" role="presentation">
+                <tr>
+                  <td style="background-color: #ffffff; padding: 20px; text-align: center; border: 2px dashed #c9a227;">
+                    <img src="{{HUMOR_IMAGE_URL}}" alt="${content.humorSection.altText}" width="520" style="width: 100%; max-width: 520px; height: auto; display: block; margin: 0 auto;" />
+                    <p style="color: #4a5568; font-size: 12px; margin: 10px 0 0 0; font-family: Arial, sans-serif;">Inspired by The Pugville Chronicles</p>
+                  </td>
+                </tr>
+              </table>
               <p style="color: #4a5568; font-size: 14px; font-style: italic; margin: 15px 0 0 0; font-family: Georgia, Times, serif;">${content.humorSection.caption}</p>
             </td>
           </tr>
@@ -196,18 +209,80 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
           <tr>
             <td style="background-color: #2d3748; padding: 30px 40px; text-align: center;">
               <!-- Feedback -->
-              <div style="margin-bottom: 20px;">
-                <p style="color: #a0aec0; font-size: 14px; margin: 0 0 10px 0; font-family: Arial, sans-serif;">Was this info helpful?</p>
-                <a href="{{FEEDBACK_POSITIVE_LINK}}" style="display: inline-block; background-color: transparent; border: 1px solid #4a5568; color: #a0aec0; padding: 8px 20px; margin: 0 5px; font-size: 20px; text-decoration: none; border-radius: 5px;">Yes</a>
-                <a href="{{FEEDBACK_NEGATIVE_LINK}}" style="display: inline-block; background-color: transparent; border: 1px solid #4a5568; color: #a0aec0; padding: 8px 20px; margin: 0 5px; font-size: 20px; text-decoration: none; border-radius: 5px;">No</a>
-              </div>
+              <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 20px;" role="presentation">
+                <tr>
+                  <td align="center">
+                    <p style="color: #a0aec0; font-size: 14px; margin: 0 0 10px 0; font-family: Arial, sans-serif;">Was this info helpful?</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+                      <tr>
+                        <td style="padding: 0 5px;">
+                          <!--[if mso]>
+                          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="{{FEEDBACK_POSITIVE_LINK}}" style="height:40px;v-text-anchor:middle;width:80px;" arcsize="10%" strokecolor="#4a5568" fillcolor="#2d3748">
+                            <center style="color:#a0aec0;font-family:Arial,sans-serif;font-size:20px;">Yes</center>
+                          </v:roundrect>
+                          <![endif]-->
+                          <!--[if !mso]><!-->
+                          <a href="{{FEEDBACK_POSITIVE_LINK}}" style="border: 1px solid #4a5568; color: #a0aec0; padding: 8px 20px; font-size: 20px; text-decoration: none; border-radius: 5px; font-family: Arial, sans-serif; mso-hide: all;">Yes</a>
+                          <!--<![endif]-->
+                        </td>
+                        <td style="padding: 0 5px;">
+                          <!--[if mso]>
+                          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="{{FEEDBACK_NEGATIVE_LINK}}" style="height:40px;v-text-anchor:middle;width:80px;" arcsize="10%" strokecolor="#4a5568" fillcolor="#2d3748">
+                            <center style="color:#a0aec0;font-family:Arial,sans-serif;font-size:20px;">No</center>
+                          </v:roundrect>
+                          <![endif]-->
+                          <!--[if !mso]><!-->
+                          <a href="{{FEEDBACK_NEGATIVE_LINK}}" style="border: 1px solid #4a5568; color: #a0aec0; padding: 8px 20px; font-size: 20px; text-decoration: none; border-radius: 5px; font-family: Arial, sans-serif; mso-hide: all;">No</a>
+                          <!--<![endif]-->
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
 
               <!-- Social Icons -->
-              <div style="margin-bottom: 20px;">
-                <a href="{{FACEBOOK_LINK}}" style="display: inline-block; width: 35px; height: 35px; background-color: #4a5568; border-radius: 50%; margin: 0 5px; line-height: 35px; color: #ffffff; text-decoration: none; font-family: Arial, sans-serif; font-size: 14px;">f</a>
-                <a href="{{LINKEDIN_LINK}}" style="display: inline-block; width: 35px; height: 35px; background-color: #4a5568; border-radius: 50%; margin: 0 5px; line-height: 35px; color: #ffffff; text-decoration: none; font-family: Arial, sans-serif; font-size: 12px;">in</a>
-                <a href="{{TWITTER_LINK}}" style="display: inline-block; width: 35px; height: 35px; background-color: #4a5568; border-radius: 50%; margin: 0 5px; line-height: 35px; color: #ffffff; text-decoration: none; font-family: Arial, sans-serif; font-size: 14px;">X</a>
-              </div>
+              <table cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto 20px auto;" role="presentation">
+                <tr>
+                  <td align="center" style="padding: 0 5px;">
+                    <a href="{{FACEBOOK_LINK}}" style="color: #ffffff; text-decoration: none; font-family: Arial, sans-serif; font-size: 14px;">
+                      <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+                        <tr>
+                          <td width="35" height="35" align="center" valign="middle" style="background-color: #4a5568; border-radius: 50%; color: #ffffff; font-family: Arial, sans-serif; font-size: 14px;">
+                            f
+                          </td>
+                        </tr>
+                      </table>
+                    </a>
+                  </td>
+                  <td align="center" style="padding: 0 5px;">
+                    <a href="{{LINKEDIN_LINK}}" style="color: #ffffff; text-decoration: none; font-family: Arial, sans-serif; font-size: 12px;">
+                      <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+                        <tr>
+                          <td width="35" height="35" align="center" valign="middle" style="background-color: #4a5568; border-radius: 50%; color: #ffffff; font-family: Arial, sans-serif; font-size: 12px;">
+                            in
+                          </td>
+                        </tr>
+                      </table>
+                    </a>
+                  </td>
+                  <td align="center" style="padding: 0 5px;">
+                    <a href="{{TWITTER_LINK}}" style="color: #ffffff; text-decoration: none; font-family: Arial, sans-serif; font-size: 14px;">
+                      <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+                        <tr>
+                          <td width="35" height="35" align="center" valign="middle" style="background-color: #4a5568; border-radius: 50%; color: #ffffff; font-family: Arial, sans-serif; font-size: 14px;">
+                            X
+                          </td>
+                        </tr>
+                      </table>
+                    </a>
+                  </td>
+                </tr>
+              </table>
 
               <!-- Disclaimer -->
               <p style="color: #718096; font-size: 11px; line-height: 1.5; margin: 0 0 15px 0; font-family: Arial, sans-serif;">${content.footer.disclaimer}</p>
