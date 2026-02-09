@@ -127,7 +127,7 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
           <!-- Headlines Section -->
           <tr>
             <td class="content-padding" style="padding: 30px 40px;">
-              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #c9a227; padding-bottom: 10px; font-family: Georgia, Times, serif;">📰 This Month's Headlines</h2>
+              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #c9a227; padding-bottom: 10px; font-family: Georgia, Times, serif;">Featured</h2>
               ${headlinesHtml}
             </td>
           </tr>

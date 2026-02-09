@@ -414,7 +414,7 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
           {/* Headlines Section */}
           <tr>
             <td style={styles.section}>
-              <h2 style={styles.sectionTitle}>📰 This Month's Headlines</h2>
+              <h2 style={styles.sectionTitle}>Featured</h2>
               {content.headlines.map((headline, index) => (
                 <div key={index} style={styles.headline}>
                   <EditableText
