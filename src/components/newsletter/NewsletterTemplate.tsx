@@ -518,12 +518,15 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
                 backgroundColor: '#ffffff', 
                 padding: '20px', 
                 borderRadius: '8px',
-                border: '2px dashed #c9a227'
+                border: '2px dashed #c9a227',
+                textAlign: 'center' as const
               }}>
-                <p style={{ color: '#718096', fontSize: '14px', margin: '0 0 10px 0' }}>
-                  [Pug-themed retirement meme goes here]
-                </p>
-                <p style={{ color: '#4a5568', fontSize: '12px', margin: '0' }}>
+                <img 
+                  src="/images/pug-taxes.jpg" 
+                  alt="Pug tax meme - When you do your taxes alone vs when HarikThompson takes care of it"
+                  style={{ maxWidth: '100%', height: 'auto', borderRadius: '6px' }}
+                />
+                <p style={{ color: '#4a5568', fontSize: '12px', margin: '10px 0 0 0' }}>
                   Inspired by The Pugville Chronicles
                 </p>
               </div>
