@@ -554,7 +554,7 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
             <td style={styles.footer}>
               {/* Feedback */}
               <div style={styles.feedbackSection}>
-                <p style={styles.feedbackText}>How was this newsletter?</p>
+                <p style={styles.feedbackText}>Was this info helpful?</p>
                 <div style={styles.feedbackButtons}>
                   <a href="{{FEEDBACK_POSITIVE_LINK}}" style={styles.feedbackButton}>Yes</a>
                   <a href="{{FEEDBACK_NEGATIVE_LINK}}" style={styles.feedbackButton}>No</a>

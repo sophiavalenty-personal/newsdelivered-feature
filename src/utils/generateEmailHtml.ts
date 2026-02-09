@@ -197,7 +197,7 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
             <td style="background-color: #2d3748; padding: 30px 40px; text-align: center;">
               <!-- Feedback -->
               <div style="margin-bottom: 20px;">
-                <p style="color: #a0aec0; font-size: 14px; margin: 0 0 10px 0; font-family: Arial, sans-serif;">How was this newsletter?</p>
+                <p style="color: #a0aec0; font-size: 14px; margin: 0 0 10px 0; font-family: Arial, sans-serif;">Was this info helpful?</p>
                 <a href="{{FEEDBACK_POSITIVE_LINK}}" style="display: inline-block; background-color: transparent; border: 1px solid #4a5568; color: #a0aec0; padding: 8px 20px; margin: 0 5px; font-size: 20px; text-decoration: none; border-radius: 5px;">Yes</a>
                 <a href="{{FEEDBACK_NEGATIVE_LINK}}" style="display: inline-block; background-color: transparent; border: 1px solid #4a5568; color: #a0aec0; padding: 8px 20px; margin: 0 5px; font-size: 20px; text-decoration: none; border-radius: 5px;">No</a>
               </div>
