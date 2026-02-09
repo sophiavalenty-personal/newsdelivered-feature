@@ -81,7 +81,7 @@ Don't let inherited IRA rules catch you off guard. The 10-year clock is ticking.
   ],
   humorSection: {
     imageUrl: "{{HUMOR_IMAGE_URL}}",
-    caption: "When your financial advisor explains RMDs but you're still thinking about retirement beach walks with your pug 🐕",
+    caption: "When your financial advisor explains RMDs but you're still thinking about retirement beach walks with your pug",
     altText: "Retirement humor illustration"
   },
   ctaButton: {
@@ -446,7 +446,7 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
           {/* Story Section */}
           <tr>
             <td style={styles.section}>
-              <h2 style={styles.sectionTitle}>📖 Real-World Scenario</h2>
+              <h2 style={styles.sectionTitle}>Real-World Scenario</h2>
               <EditableText
                 value={content.story.title}
                 onChange={(v) => updateContent({ story: { ...content.story, title: v } })}
@@ -468,7 +468,7 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
           {/* Key Insights Section */}
           <tr>
             <td style={styles.section}>
-              <h2 style={styles.sectionTitle}>💡 Key Insights</h2>
+              <h2 style={styles.sectionTitle}>Key Insights</h2>
               {content.keyInsights.map((insight, index) => (
                 <div key={index} style={styles.insightBox}>
                   <EditableText
@@ -486,7 +486,7 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
           {/* Action Steps Section */}
           <tr>
             <td style={styles.section}>
-              <h2 style={styles.sectionTitle}>✅ Your Action Steps</h2>
+              <h2 style={styles.sectionTitle}>Your Action Steps</h2>
               {content.actionSteps.map((step, index) => (
                 <table key={index} cellPadding="0" cellSpacing="0" style={{ marginBottom: '15px', width: '100%' }} role="presentation">
                   <tbody>
@@ -513,7 +513,7 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
           {/* Humor Section */}
           <tr>
             <td style={styles.humorSection}>
-              <h2 style={{ ...styles.sectionTitle, textAlign: 'center', borderBottom: 'none' }}>😄 A Moment of Levity</h2>
+              <h2 style={{ ...styles.sectionTitle, textAlign: 'center', borderBottom: 'none' }}>A Moment of Levity</h2>
               <div style={{ 
                 backgroundColor: '#ffffff', 
                 padding: '20px', 
@@ -524,7 +524,7 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
                   [Pug-themed retirement meme goes here]
                 </p>
                 <p style={{ color: '#4a5568', fontSize: '12px', margin: '0' }}>
-                  🐕 Inspired by The Pugville Chronicles
+                  Inspired by The Pugville Chronicles
                 </p>
               </div>
               <EditableText
@@ -556,8 +556,8 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
               <div style={styles.feedbackSection}>
                 <p style={styles.feedbackText}>How was this newsletter?</p>
                 <div style={styles.feedbackButtons}>
-                  <a href="{{FEEDBACK_POSITIVE_LINK}}" style={styles.feedbackButton}>👍</a>
-                  <a href="{{FEEDBACK_NEGATIVE_LINK}}" style={styles.feedbackButton}>👎</a>
+                  <a href="{{FEEDBACK_POSITIVE_LINK}}" style={styles.feedbackButton}>Yes</a>
+                  <a href="{{FEEDBACK_NEGATIVE_LINK}}" style={styles.feedbackButton}>No</a>
                 </div>
               </div>
 
