@@ -142,7 +142,7 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
           <!-- Story Section -->
           <tr>
             <td class="content-padding" style="padding: 30px 40px;">
-              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #c9a227; padding-bottom: 10px; font-family: Georgia, Times, serif;">📖 Real-World Scenario</h2>
+              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #c9a227; padding-bottom: 10px; font-family: Georgia, Times, serif;">Real-World Scenario</h2>
               <h3 style="color: #1a4a6e; font-size: 22px; font-weight: bold; margin: 0 0 15px 0; font-family: Georgia, Times, serif;">${content.story.title}</h3>
               <p style="color: #2d3748; font-size: 15px; line-height: 1.7; margin: 0; font-family: Georgia, Times, serif;">${storyContentHtml}</p>
             </td>
@@ -151,7 +151,7 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
           <!-- Key Insights Section -->
           <tr>
             <td class="content-padding" style="padding: 30px 40px;">
-              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #c9a227; padding-bottom: 10px; font-family: Georgia, Times, serif;">💡 Key Insights</h2>
+              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #c9a227; padding-bottom: 10px; font-family: Georgia, Times, serif;">Key Insights</h2>
               ${insightsHtml}
             </td>
           </tr>
@@ -159,7 +159,7 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
           <!-- Action Steps Section -->
           <tr>
             <td class="content-padding" style="padding: 30px 40px;">
-              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #c9a227; padding-bottom: 10px; font-family: Georgia, Times, serif;">✅ Your Action Steps</h2>
+              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #c9a227; padding-bottom: 10px; font-family: Georgia, Times, serif;">Your Action Steps</h2>
               ${stepsHtml}
             </td>
           </tr>
@@ -167,10 +167,10 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
           <!-- Humor Section -->
           <tr>
             <td style="background-color: #f5f3ef; padding: 30px 40px; text-align: center;">
-              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; font-family: Georgia, Times, serif;">😄 A Moment of Levity</h2>
+              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; font-family: Georgia, Times, serif;">A Moment of Levity</h2>
               <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; border: 2px dashed #c9a227;">
                 <p style="color: #718096; font-size: 14px; margin: 0 0 10px 0; font-family: Arial, sans-serif;">[Pug-themed retirement meme goes here]</p>
-                <p style="color: #4a5568; font-size: 12px; margin: 0; font-family: Arial, sans-serif;">🐕 Inspired by The Pugville Chronicles</p>
+                <p style="color: #4a5568; font-size: 12px; margin: 0; font-family: Arial, sans-serif;">Inspired by The Pugville Chronicles</p>
               </div>
               <p style="color: #4a5568; font-size: 14px; font-style: italic; margin: 15px 0 0 0; font-family: Georgia, Times, serif;">${content.humorSection.caption}</p>
             </td>
@@ -198,8 +198,8 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
               <!-- Feedback -->
               <div style="margin-bottom: 20px;">
                 <p style="color: #a0aec0; font-size: 14px; margin: 0 0 10px 0; font-family: Arial, sans-serif;">How was this newsletter?</p>
-                <a href="{{FEEDBACK_POSITIVE_LINK}}" style="display: inline-block; background-color: transparent; border: 1px solid #4a5568; color: #a0aec0; padding: 8px 20px; margin: 0 5px; font-size: 20px; text-decoration: none; border-radius: 5px;">👍</a>
-                <a href="{{FEEDBACK_NEGATIVE_LINK}}" style="display: inline-block; background-color: transparent; border: 1px solid #4a5568; color: #a0aec0; padding: 8px 20px; margin: 0 5px; font-size: 20px; text-decoration: none; border-radius: 5px;">👎</a>
+                <a href="{{FEEDBACK_POSITIVE_LINK}}" style="display: inline-block; background-color: transparent; border: 1px solid #4a5568; color: #a0aec0; padding: 8px 20px; margin: 0 5px; font-size: 20px; text-decoration: none; border-radius: 5px;">Yes</a>
+                <a href="{{FEEDBACK_NEGATIVE_LINK}}" style="display: inline-block; background-color: transparent; border: 1px solid #4a5568; color: #a0aec0; padding: 8px 20px; margin: 0 5px; font-size: 20px; text-decoration: none; border-radius: 5px;">No</a>
               </div>
 
               <!-- Social Icons -->
