@@ -111,10 +111,10 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
           
           <!-- Header -->
           <tr>
-            <td style="background-color: #1a4a6e; padding: 30px 40px; text-align: center;">
+            <td style="background-color: #ffffff; padding: 30px 40px; text-align: center;">
               ${logo}
-              <p style="color: #ffffff; margin: 0; font-size: 14px; font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: 2px;">Prepared for</p>
-              <h1 style="color: #ffffff; margin: 10px 0 0 0; font-size: 24px; font-weight: bold; font-family: Georgia, Times, serif;">${content.preparedFor}</h1>
+              <p style="color: #1a4a6e; margin: 0; font-size: 14px; font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: 2px;">Prepared for</p>
+              <h1 style="color: #1a4a6e; margin: 10px 0 0 0; font-size: 24px; font-weight: bold; font-family: Georgia, Times, serif;">${content.preparedFor}</h1>
             </td>
           </tr>
 
