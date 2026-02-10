@@ -49,11 +49,13 @@ export const defaultContent: NewsletterContent = {
     },
     {
       title: "RMD Rules for Inherited IRAs",
-      description: "SECURE Act 2.0 brings major changes to required minimum distributions for beneficiaries."
+      description: "SECURE Act 2.0 brings major changes to required minimum distributions for beneficiaries.",
+      url: "/blog/rmd-inherited-ira"
     },
     {
       title: "Wildfire Personal Casualty Loss",
-      description: "Important tax relief provisions available for those affected by recent California wildfires."
+      description: "Important tax relief provisions available for those affected by recent California wildfires.",
+      url: "/blog/wildfire-casualty-loss"
     }
   ],
   story: {
