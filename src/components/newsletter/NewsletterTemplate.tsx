@@ -549,7 +549,7 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
                 textAlign: 'center' as const
               }}>
                 <img 
-                  src="/images/pug-taxes.jpg" 
+                  src="/images/pug-meme.jpg" 
                   alt="Pug tax meme - When you do your taxes alone vs when HarikThompson takes care of it"
                   style={{ maxWidth: '100%', height: 'auto', borderRadius: '6px' }}
                 />
