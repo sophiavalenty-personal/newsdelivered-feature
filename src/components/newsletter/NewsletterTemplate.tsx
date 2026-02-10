@@ -126,18 +126,18 @@ const styles = {
     fontWeight: 'bold' as const
   },
   contactBar: {
-    backgroundColor: '#86C733',
+    backgroundColor: '#1a4a6e',
     padding: '12px 40px',
     textAlign: 'center' as const
   },
   contactText: {
-    color: '#1a4a6e',
+    color: '#ffffff',
     margin: '0',
     fontSize: '13px',
     fontFamily: 'Arial, sans-serif'
   },
   contactLink: {
-    color: '#1a4a6e',
+    color: '#ffffff',
     textDecoration: 'none'
   },
   section: {
