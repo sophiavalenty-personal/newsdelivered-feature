@@ -107,12 +107,12 @@ const styles = {
     backgroundColor: '#ffffff'
   },
   header: {
-    backgroundColor: '#1a4a6e',
+    backgroundColor: '#ffffff',
     padding: '30px 40px',
     textAlign: 'center' as const
   },
   headerText: {
-    color: '#ffffff',
+    color: '#1a4a6e',
     margin: '0',
     fontSize: '14px',
     fontFamily: 'Arial, sans-serif',
@@ -120,7 +120,7 @@ const styles = {
     letterSpacing: '2px'
   },
   firmName: {
-    color: '#ffffff',
+    color: '#1a4a6e',
     margin: '10px 0 0 0',
     fontSize: '24px',
     fontWeight: 'bold' as const
