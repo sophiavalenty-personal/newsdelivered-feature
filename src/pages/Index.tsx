@@ -1,9 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { NewsletterTemplate, defaultContent, NewsletterContent } from '@/components/newsletter/NewsletterTemplate';
 import { generateEmailHtml } from '@/utils/generateEmailHtml';
 import { toast } from 'sonner';
-import { Copy, Monitor, Smartphone, Check, Edit2, Eye, Code, FileText } from 'lucide-react';
+import { Copy, Monitor, Smartphone, Check, Edit2, Eye, Code, FileText, RotateCcw } from 'lucide-react';
 
 const Index = () => {
   const [content, setContent] = useState<NewsletterContent>(defaultContent);
@@ -12,8 +12,17 @@ const Index = () => {
   const [copied, setCopied] = useState(false);
   const [logoUrl, setLogoUrl] = useState<string | undefined>();
   const [panelMode, setPanelMode] = useState<'preview' | 'html'>('preview');
+  const [customHtml, setCustomHtml] = useState<string | null>(null);
 
-  const emailHtml = useMemo(() => generateEmailHtml(content, logoUrl), [content, logoUrl]);
+  const generatedHtml = useMemo(() => generateEmailHtml(content, logoUrl), [content, logoUrl]);
+  const emailHtml = customHtml ?? generatedHtml;
+
+  // Sync generated HTML when switching to HTML panel and no custom edits exist
+  useEffect(() => {
+    if (panelMode === 'html' && customHtml === null) {
+      // no-op, emailHtml already falls back to generatedHtml
+    }
+  }, [panelMode, customHtml, generatedHtml]);
 
   const handleCopyHtml = async () => {
     const html = emailHtml;
@@ -169,15 +178,29 @@ const Index = () => {
           <div className="max-w-5xl mx-auto">
             <div className="bg-background rounded-lg border shadow-sm overflow-hidden">
               <div className="flex items-center justify-between px-4 py-2 border-b bg-muted/50">
-                <span className="text-sm font-medium text-muted-foreground">Email HTML Source</span>
-                <Button onClick={handleCopyHtml} size="sm" variant="ghost">
-                  {copied ? <Check className="w-4 h-4 mr-1" /> : <Copy className="w-4 h-4 mr-1" />}
-                  {copied ? 'Copied!' : 'Copy'}
-                </Button>
+                <span className="text-sm font-medium text-muted-foreground">
+                  Email HTML Source {customHtml !== null && <span className="text-accent ml-1">(edited)</span>}
+                </span>
+                <div className="flex items-center gap-2">
+                  {customHtml !== null && (
+                    <Button
+                      onClick={() => { setCustomHtml(null); toast.success('Reset to generated HTML'); }}
+                      size="sm"
+                      variant="ghost"
+                    >
+                      <RotateCcw className="w-4 h-4 mr-1" />
+                      Reset
+                    </Button>
+                  )}
+                  <Button onClick={handleCopyHtml} size="sm" variant="ghost">
+                    {copied ? <Check className="w-4 h-4 mr-1" /> : <Copy className="w-4 h-4 mr-1" />}
+                    {copied ? 'Copied!' : 'Copy'}
+                  </Button>
+                </div>
               </div>
               <textarea
                 value={emailHtml}
-                readOnly
+                onChange={(e) => setCustomHtml(e.target.value)}
                 className="w-full h-[70vh] p-4 font-mono text-sm bg-background text-foreground resize-none focus:outline-none"
                 spellCheck={false}
               />
