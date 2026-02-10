@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { NewsletterTemplate, defaultContent, NewsletterContent } from '@/components/newsletter/NewsletterTemplate';
 import { generateEmailHtml } from '@/utils/generateEmailHtml';
 import { toast } from 'sonner';
-import { Copy, Monitor, Smartphone, Check, Edit2, Eye } from 'lucide-react';
+import { Copy, Monitor, Smartphone, Check, Edit2, Eye, Code, FileText } from 'lucide-react';
 
 const Index = () => {
   const [content, setContent] = useState<NewsletterContent>(defaultContent);
@@ -11,9 +11,12 @@ const Index = () => {
   const [editMode, setEditMode] = useState(false);
   const [copied, setCopied] = useState(false);
   const [logoUrl, setLogoUrl] = useState<string | undefined>();
+  const [panelMode, setPanelMode] = useState<'preview' | 'html'>('preview');
+
+  const emailHtml = useMemo(() => generateEmailHtml(content, logoUrl), [content, logoUrl]);
 
   const handleCopyHtml = async () => {
-    const html = generateEmailHtml(content, logoUrl);
+    const html = emailHtml;
     try {
       await navigator.clipboard.writeText(html);
       setCopied(true);
@@ -87,15 +90,43 @@ const Index = () => {
                 </button>
               </div>
 
-              {/* Edit Mode Toggle */}
-              <Button
-                variant={editMode ? 'secondary' : 'outline'}
-                size="sm"
-                onClick={() => setEditMode(!editMode)}
-              >
-                {editMode ? <Eye className="w-4 h-4 mr-1" /> : <Edit2 className="w-4 h-4 mr-1" />}
-                {editMode ? 'Preview' : 'Edit'}
-              </Button>
+              {/* Panel Mode Toggle: Preview / HTML */}
+              <div className="flex items-center border rounded-md overflow-hidden">
+                <button
+                  onClick={() => setPanelMode('preview')}
+                  className={`px-3 py-2 flex items-center gap-1 text-sm transition-colors ${
+                    panelMode === 'preview'
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-background text-foreground hover:bg-secondary'
+                  }`}
+                >
+                  <FileText className="w-4 h-4" />
+                  <span className="hidden sm:inline">Preview</span>
+                </button>
+                <button
+                  onClick={() => setPanelMode('html')}
+                  className={`px-3 py-2 flex items-center gap-1 text-sm transition-colors ${
+                    panelMode === 'html'
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-background text-foreground hover:bg-secondary'
+                  }`}
+                >
+                  <Code className="w-4 h-4" />
+                  <span className="hidden sm:inline">Edit HTML</span>
+                </button>
+              </div>
+
+              {/* Edit Mode Toggle (only in preview mode) */}
+              {panelMode === 'preview' && (
+                <Button
+                  variant={editMode ? 'secondary' : 'outline'}
+                  size="sm"
+                  onClick={() => setEditMode(!editMode)}
+                >
+                  {editMode ? <Eye className="w-4 h-4 mr-1" /> : <Edit2 className="w-4 h-4 mr-1" />}
+                  {editMode ? 'Preview' : 'Edit'}
+                </Button>
+              )}
 
               {/* Copy HTML Button */}
               <Button
@@ -111,28 +142,48 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Newsletter Preview */}
+      {/* Newsletter Preview or HTML Editor */}
       <div className="py-8 px-4">
-        <div 
-          className={`mx-auto transition-all duration-300 ${
-            viewMode === 'mobile' ? 'max-w-[375px]' : 'max-w-[650px]'
-          }`}
-          style={{
-            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
-          }}
-        >
-          {editMode && (
-            <div className="bg-accent/20 border border-accent rounded-t-lg px-4 py-2 text-sm text-accent-foreground">
-              ✏️ Click on any text to edit it. Changes will be reflected in the exported HTML.
+        {panelMode === 'preview' ? (
+          <div 
+            className={`mx-auto transition-all duration-300 ${
+              viewMode === 'mobile' ? 'max-w-[375px]' : 'max-w-[650px]'
+            }`}
+            style={{
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
+            }}
+          >
+            {editMode && (
+              <div className="bg-accent/20 border border-accent rounded-t-lg px-4 py-2 text-sm text-accent-foreground">
+                Click on any text to edit it. Changes will be reflected in the exported HTML.
+              </div>
+            )}
+            <NewsletterTemplate
+              content={content}
+              onContentChange={setContent}
+              editable={editMode}
+              logoUrl={logoUrl}
+            />
+          </div>
+        ) : (
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-background rounded-lg border shadow-sm overflow-hidden">
+              <div className="flex items-center justify-between px-4 py-2 border-b bg-muted/50">
+                <span className="text-sm font-medium text-muted-foreground">Email HTML Source</span>
+                <Button onClick={handleCopyHtml} size="sm" variant="ghost">
+                  {copied ? <Check className="w-4 h-4 mr-1" /> : <Copy className="w-4 h-4 mr-1" />}
+                  {copied ? 'Copied!' : 'Copy'}
+                </Button>
+              </div>
+              <textarea
+                value={emailHtml}
+                readOnly
+                className="w-full h-[70vh] p-4 font-mono text-sm bg-background text-foreground resize-none focus:outline-none"
+                spellCheck={false}
+              />
             </div>
-          )}
-          <NewsletterTemplate
-            content={content}
-            onContentChange={setContent}
-            editable={editMode}
-            logoUrl={logoUrl}
-          />
-        </div>
+          </div>
+        )}
       </div>
 
       {/* Instructions Footer */}
