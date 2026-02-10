@@ -55,23 +55,10 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <h1 className="text-xl font-bold text-foreground">Newsletter Template Builder</h1>
-              <p className="text-sm text-muted-foreground">Kevin Thompson, CPAs and Advisors</p>
+              <h1 className="text-xl font-bold text-foreground">Marketing Demo: HarikThompson CPAs</h1>
             </div>
             
             <div className="flex flex-wrap items-center gap-3">
-              {/* Logo Upload */}
-              <label className="cursor-pointer">
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleLogoUpload}
-                  className="hidden"
-                />
-                <Button variant="outline" size="sm" asChild>
-                  <span>{logoUrl ? 'Change Logo' : 'Upload Logo'}</span>
-                </Button>
-              </label>
 
               {/* View Mode Toggle */}
               <div className="flex items-center border rounded-md overflow-hidden">
