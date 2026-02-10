@@ -3,7 +3,7 @@ import { NewsletterContent } from '@/components/newsletter/NewsletterTemplate';
 export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string): string => {
   const logo = logoUrl 
     ? `<img src="${logoUrl}" alt="${content.firmName}" style="max-width: 200px; margin-bottom: 15px;" />`
-    : `<div style="margin-bottom: 10px; color: #c9a227; font-size: 12px;">[Logo placeholder]</div>`;
+    : `<div style="margin-bottom: 10px; color: #86C733; font-size: 12px;">[Logo placeholder]</div>`;
 
   const headlinesHtml = content.headlines.map(h => `
     <div style="margin-bottom: 15px;">
@@ -15,7 +15,7 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
   const insightsHtml = content.keyInsights.map(insight => `
     <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 10px;" role="presentation">
       <tr>
-        <td style="width: 4px; background-color: #c9a227;"></td>
+        <td style="width: 4px; background-color: #86C733;"></td>
         <td style="background-color: #f5f3ef; padding: 20px 25px;">
           <p style="color: #2d3748; font-size: 14px; margin: 0; line-height: 1.6; font-family: Georgia, Times, serif;">${insight}</p>
         </td>
@@ -120,7 +120,7 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
 
           <!-- Contact Bar -->
           <tr>
-            <td style="background-color: #c9a227; padding: 12px 40px; text-align: center;">
+            <td style="background-color: #86C733; padding: 12px 40px; text-align: center;">
               <p style="color: #1a4a6e; margin: 0; font-size: 13px; font-family: Arial, sans-serif;">
                 <a href="mailto:${content.contactEmail}" style="color: #1a4a6e; text-decoration: none;">${content.contactEmail}</a> | 
                 <a href="tel:${content.contactPhone.replace(/[^0-9]/g, '')}" style="color: #1a4a6e; text-decoration: none;">${content.contactPhone}</a> | 
@@ -132,7 +132,7 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
           <!-- Headlines Section -->
           <tr>
             <td class="content-padding" style="padding: 30px 40px;">
-              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #c9a227; padding-bottom: 10px; font-family: Georgia, Times, serif;">Featured</h2>
+              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #86C733; padding-bottom: 10px; font-family: Georgia, Times, serif;">Featured</h2>
               ${headlinesHtml}
             </td>
           </tr>
@@ -142,7 +142,7 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
             <td style="padding: 0 40px;">
               <table cellpadding="0" cellspacing="0" border="0" width="100%" role="presentation">
                 <tr>
-                  <td style="border-top: 1px solid #e2d9c8; font-size: 1px; line-height: 1px;">&nbsp;</td>
+                  <td style="border-top: 1px solid #d4e8c0; font-size: 1px; line-height: 1px;">&nbsp;</td>
                 </tr>
               </table>
             </td>
@@ -151,7 +151,7 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
           <!-- Story Section -->
           <tr>
             <td class="content-padding" style="padding: 30px 40px;">
-              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #c9a227; padding-bottom: 10px; font-family: Georgia, Times, serif;">Real-World Scenario</h2>
+              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #86C733; padding-bottom: 10px; font-family: Georgia, Times, serif;">Real-World Scenario</h2>
               <h3 style="color: #1a4a6e; font-size: 22px; font-weight: bold; margin: 0 0 15px 0; font-family: Georgia, Times, serif;">${content.story.title}</h3>
               <p style="color: #2d3748; font-size: 15px; line-height: 1.7; margin: 0; font-family: Georgia, Times, serif;">${storyContentHtml}</p>
             </td>
@@ -160,7 +160,7 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
           <!-- Key Insights Section -->
           <tr>
             <td class="content-padding" style="padding: 30px 40px;">
-              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #c9a227; padding-bottom: 10px; font-family: Georgia, Times, serif;">Key Insights</h2>
+              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #86C733; padding-bottom: 10px; font-family: Georgia, Times, serif;">Key Insights</h2>
               ${insightsHtml}
             </td>
           </tr>
@@ -168,7 +168,7 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
           <!-- Action Steps Section -->
           <tr>
             <td class="content-padding" style="padding: 30px 40px;">
-              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #c9a227; padding-bottom: 10px; font-family: Georgia, Times, serif;">Your Action Steps</h2>
+              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #86C733; padding-bottom: 10px; font-family: Georgia, Times, serif;">Your Action Steps</h2>
               ${stepsHtml}
             </td>
           </tr>
@@ -179,7 +179,7 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
               <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; font-family: Georgia, Times, serif;">A Moment of Levity</h2>
               <table cellpadding="0" cellspacing="0" border="0" width="100%" role="presentation">
                 <tr>
-                  <td style="background-color: #ffffff; padding: 20px; text-align: center; border: 2px dashed #c9a227;">
+                  <td style="background-color: #ffffff; padding: 20px; text-align: center; border: 2px dashed #86C733;">
                     <img src="{{HUMOR_IMAGE_URL}}" alt="${content.humorSection.altText}" width="520" style="width: 100%; max-width: 520px; height: auto; display: block; margin: 0 auto;" />
                     <p style="color: #4a5568; font-size: 12px; margin: 10px 0 0 0; font-family: Arial, sans-serif;">Inspired by The Pugville Chronicles</p>
                   </td>
@@ -194,13 +194,13 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
             <td style="background-color: #1a4a6e; padding: 40px; text-align: center;">
               <p style="color: #ffffff; font-size: 18px; margin: 0 0 20px 0; font-family: Georgia, Times, serif;">Ready to protect your retirement?</p>
               <!--[if mso]>
-              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${content.ctaButton.url}" style="height:50px;v-text-anchor:middle;width:320px;" arcsize="10%" strokecolor="#c9a227" fillcolor="#c9a227">
+              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${content.ctaButton.url}" style="height:50px;v-text-anchor:middle;width:320px;" arcsize="10%" strokecolor="#86C733" fillcolor="#86C733">
                 <w:anchorlock/>
                 <center style="color:#1a4a6e;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">${content.ctaButton.text}</center>
               </v:roundrect>
               <![endif]-->
               <!--[if !mso]><!-->
-              <a href="${content.ctaButton.url}" style="background-color: #c9a227; color: #1a4a6e; padding: 15px 35px; font-size: 16px; font-weight: bold; text-decoration: none; border-radius: 5px; display: inline-block; font-family: Arial, sans-serif;">${content.ctaButton.text}</a>
+              <a href="${content.ctaButton.url}" style="background-color: #86C733; color: #1a4a6e; padding: 15px 35px; font-size: 16px; font-weight: bold; text-decoration: none; border-radius: 5px; display: inline-block; font-family: Arial, sans-serif;">${content.ctaButton.text}</a>
               <!--<![endif]-->
             </td>
           </tr>

@@ -126,7 +126,7 @@ const styles = {
     fontWeight: 'bold' as const
   },
   contactBar: {
-    backgroundColor: '#c9a227',
+    backgroundColor: '#86C733',
     padding: '12px 40px',
     textAlign: 'center' as const
   },
@@ -148,7 +148,7 @@ const styles = {
     fontSize: '20px',
     fontWeight: 'bold' as const,
     marginBottom: '20px',
-    borderBottom: '2px solid #c9a227',
+    borderBottom: '2px solid #86C733',
     paddingBottom: '10px'
   },
   headline: {
@@ -182,7 +182,7 @@ const styles = {
     backgroundColor: '#f5f3ef',
     padding: '20px 25px',
     marginBottom: '10px',
-    borderLeft: '4px solid #c9a227'
+    borderLeft: '4px solid #86C733'
   },
   insightText: {
     color: '#2d3748',
@@ -236,7 +236,7 @@ const styles = {
     backgroundColor: '#1a4a6e'
   },
   ctaButton: {
-    backgroundColor: '#c9a227',
+    backgroundColor: '#86C733',
     color: '#1a4a6e',
     padding: '15px 35px',
     fontSize: '16px',
@@ -326,8 +326,8 @@ const EditableText: React.FC<{
           ...style,
           width: '100%',
           minHeight: '150px',
-          border: '1px dashed #c9a227',
-          background: 'rgba(201, 162, 39, 0.05)',
+          border: '1px dashed #86C733',
+          background: 'rgba(134, 199, 51, 0.05)',
           resize: 'vertical'
         }}
       />
@@ -342,8 +342,8 @@ const EditableText: React.FC<{
       style={{
         ...style,
         width: '100%',
-        border: '1px dashed #c9a227',
-        background: 'rgba(201, 162, 39, 0.05)'
+        border: '1px dashed #86C733',
+        background: 'rgba(134, 199, 51, 0.05)'
       }}
     />
   );
@@ -431,7 +431,7 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
           {/* Divider */}
           <tr>
             <td style={{ padding: '0 40px' }}>
-              <hr style={{ border: 'none', borderTop: '1px solid #e2d9c8', margin: '0' }} />
+              <hr style={{ border: 'none', borderTop: '1px solid #d4e8c0', margin: '0' }} />
             </td>
           </tr>
 
@@ -510,7 +510,7 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
                 backgroundColor: '#ffffff', 
                 padding: '20px', 
                 borderRadius: '8px',
-                border: '2px dashed #c9a227',
+                border: '2px dashed #86C733',
                 textAlign: 'center' as const
               }}>
                 <img 
