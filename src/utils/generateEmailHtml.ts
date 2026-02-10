@@ -120,11 +120,11 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
 
           <!-- Contact Bar -->
           <tr>
-            <td style="background-color: #86C733; padding: 12px 40px; text-align: center;">
-              <p style="color: #1a4a6e; margin: 0; font-size: 13px; font-family: Arial, sans-serif;">
-                <a href="mailto:${content.contactEmail}" style="color: #1a4a6e; text-decoration: none;">${content.contactEmail}</a> | 
-                <a href="tel:${content.contactPhone.replace(/[^0-9]/g, '')}" style="color: #1a4a6e; text-decoration: none;">${content.contactPhone}</a> | 
-                <a href="${content.websiteUrl}" style="color: #1a4a6e; text-decoration: none;">Visit Website</a>
+            <td style="background-color: #1a4a6e; padding: 12px 40px; text-align: center;">
+              <p style="color: #ffffff; margin: 0; font-size: 13px; font-family: Arial, sans-serif;">
+                <a href="mailto:${content.contactEmail}" style="color: #ffffff; text-decoration: none;">${content.contactEmail}</a> | 
+                <a href="tel:${content.contactPhone.replace(/[^0-9]/g, '')}" style="color: #ffffff; text-decoration: none;">${content.contactPhone}</a> | 
+                <a href="${content.websiteUrl}" style="color: #ffffff; text-decoration: none;">Visit Website</a>
               </p>
             </td>
           </tr>
