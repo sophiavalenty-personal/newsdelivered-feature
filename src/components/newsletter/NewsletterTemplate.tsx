@@ -518,17 +518,7 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
                   alt="Pug tax meme - When you do your taxes alone vs when HarikThompson takes care of it"
                   style={{ maxWidth: '100%', height: 'auto', borderRadius: '6px' }}
                 />
-                <p style={{ color: '#4a5568', fontSize: '12px', margin: '10px 0 0 0' }}>
-                  Inspired by The Pugville Chronicles
-                </p>
               </div>
-              <EditableText
-                value={content.humorSection.caption}
-                onChange={(v) => updateContent({ humorSection: { ...content.humorSection, caption: v } })}
-                editable={editable}
-                style={{ ...styles.humorCaption, marginTop: '15px', display: 'block' }}
-                as="p"
-              />
             </td>
           </tr>
 
