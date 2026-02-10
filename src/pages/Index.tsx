@@ -3,12 +3,12 @@ import { Button } from '@/components/ui/button';
 import { NewsletterTemplate, defaultContent, NewsletterContent } from '@/components/newsletter/NewsletterTemplate';
 import { generateEmailHtml } from '@/utils/generateEmailHtml';
 import { toast } from 'sonner';
-import { Copy, Monitor, Smartphone, Check, Edit2, Eye, Code, FileText, RotateCcw } from 'lucide-react';
+import { Copy, Monitor, Smartphone, Check, Code, FileText, RotateCcw, Pencil } from 'lucide-react';
 
 const Index = () => {
   const [content, setContent] = useState<NewsletterContent>(defaultContent);
   const [viewMode, setViewMode] = useState<'desktop' | 'mobile'>('desktop');
-  const [editMode, setEditMode] = useState(false);
+  const [htmlEditable, setHtmlEditable] = useState(false);
   const [copied, setCopied] = useState(false);
   const [logoUrl, setLogoUrl] = useState<string | undefined>();
   const [panelMode, setPanelMode] = useState<'preview' | 'html'>('preview');
@@ -108,31 +108,9 @@ const Index = () => {
                   }`}
                 >
                   <Code className="w-4 h-4" />
-                  <span className="hidden sm:inline">Edit HTML</span>
+                  <span className="hidden sm:inline">HTML</span>
                 </button>
               </div>
-
-              {/* Edit Mode Toggle (only in preview mode) */}
-              {panelMode === 'preview' && (
-                <Button
-                  variant={editMode ? 'secondary' : 'outline'}
-                  size="sm"
-                  onClick={() => setEditMode(!editMode)}
-                >
-                  {editMode ? <Eye className="w-4 h-4 mr-1" /> : <Edit2 className="w-4 h-4 mr-1" />}
-                  {editMode ? 'Preview' : 'Edit'}
-                </Button>
-              )}
-
-              {/* Copy HTML Button */}
-              <Button
-                onClick={handleCopyHtml}
-                size="sm"
-                className="bg-accent text-accent-foreground hover:bg-accent/90"
-              >
-                {copied ? <Check className="w-4 h-4 mr-1" /> : <Copy className="w-4 h-4 mr-1" />}
-                {copied ? 'Copied!' : 'Copy HTML'}
-              </Button>
             </div>
           </div>
         </div>
@@ -149,15 +127,10 @@ const Index = () => {
               boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
             }}
           >
-            {editMode && (
-              <div className="bg-accent/20 border border-accent rounded-t-lg px-4 py-2 text-sm text-accent-foreground">
-                Click on any text to edit it. Changes will be reflected in the exported HTML.
-              </div>
-            )}
             <NewsletterTemplate
               content={content}
               onContentChange={setContent}
-              editable={editMode}
+              editable={false}
               logoUrl={logoUrl}
             />
           </div>
@@ -171,7 +144,7 @@ const Index = () => {
                 <div className="flex items-center gap-2">
                   {customHtml !== null && (
                     <Button
-                      onClick={() => { setCustomHtml(null); toast.success('Reset to generated HTML'); }}
+                      onClick={() => { setCustomHtml(null); setHtmlEditable(false); toast.success('Reset to generated HTML'); }}
                       size="sm"
                       variant="ghost"
                     >
@@ -179,6 +152,14 @@ const Index = () => {
                       Reset
                     </Button>
                   )}
+                  <Button
+                    onClick={() => setHtmlEditable(!htmlEditable)}
+                    size="sm"
+                    variant={htmlEditable ? 'secondary' : 'ghost'}
+                  >
+                    <Pencil className="w-4 h-4 mr-1" />
+                    {htmlEditable ? 'Done' : 'Edit'}
+                  </Button>
                   <Button onClick={handleCopyHtml} size="sm" variant="ghost">
                     {copied ? <Check className="w-4 h-4 mr-1" /> : <Copy className="w-4 h-4 mr-1" />}
                     {copied ? 'Copied!' : 'Copy'}
@@ -188,7 +169,10 @@ const Index = () => {
               <textarea
                 value={emailHtml}
                 onChange={(e) => setCustomHtml(e.target.value)}
-                className="w-full h-[70vh] p-4 font-mono text-sm bg-background text-foreground resize-none focus:outline-none"
+                readOnly={!htmlEditable}
+                className={`w-full h-[70vh] p-4 font-mono text-sm bg-background text-foreground resize-none focus:outline-none ${
+                  !htmlEditable ? 'cursor-default opacity-75' : ''
+                }`}
                 spellCheck={false}
               />
             </div>
