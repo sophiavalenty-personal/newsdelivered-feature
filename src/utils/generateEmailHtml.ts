@@ -181,11 +181,7 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
                 <tr>
                   <td style="background-color: #ffffff; padding: 20px; text-align: center; border: 2px dashed #86C733;">
                     <img src="{{HUMOR_IMAGE_URL}}" alt="${content.humorSection.altText}" width="520" style="width: 100%; max-width: 520px; height: auto; display: block; margin: 0 auto;" />
-                    <p style="color: #4a5568; font-size: 12px; margin: 10px 0 0 0; font-family: Arial, sans-serif;">Inspired by The Pugville Chronicles</p>
                   </td>
-                </tr>
-              </table>
-              <p style="color: #4a5568; font-size: 14px; font-style: italic; margin: 15px 0 0 0; font-family: Georgia, Times, serif;">${content.humorSection.caption}</p>
             </td>
           </tr>
 
