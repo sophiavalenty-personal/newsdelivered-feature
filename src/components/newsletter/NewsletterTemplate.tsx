@@ -428,6 +428,16 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
             </td>
           </tr>
 
+          {/* Soft CTA 1 */}
+          <tr>
+            <td style={{ backgroundColor: '#f0f7e6', padding: '20px 40px', textAlign: 'center' as const }}>
+              <p style={{ color: '#1a4a6e', fontSize: '14px', margin: '0', fontFamily: 'Georgia, Times, serif' }}>
+                Have questions about these updates?{' '}
+                <a href={content.ctaButton.url} style={{ color: '#86C733', fontWeight: 'bold', textDecoration: 'underline' }}>Let's talk</a>
+              </p>
+            </td>
+          </tr>
+
           {/* Divider */}
           <tr>
             <td style={{ padding: '0 40px' }}>
@@ -499,6 +509,16 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
                   </tbody>
                 </table>
               ))}
+            </td>
+          </tr>
+
+          {/* Soft CTA 2 */}
+          <tr>
+            <td style={{ backgroundColor: '#f0f7e6', padding: '20px 40px', textAlign: 'center' as const }}>
+              <p style={{ color: '#1a4a6e', fontSize: '14px', margin: '0', fontFamily: 'Georgia, Times, serif' }}>
+                Need help with your specific situation?{' '}
+                <a href={content.ctaButton.url} style={{ color: '#86C733', fontWeight: 'bold', textDecoration: 'underline' }}>Schedule a quick call</a>
+              </p>
             </td>
           </tr>
 

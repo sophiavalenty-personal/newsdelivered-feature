@@ -137,6 +137,15 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
             </td>
           </tr>
 
+          <!-- Soft CTA 1 -->
+          <tr>
+            <td style="background-color: #f0f7e6; padding: 20px 40px; text-align: center;">
+              <p style="color: #1a4a6e; font-size: 14px; margin: 0; font-family: Georgia, Times, serif;">
+                Have questions about these updates? <a href="${content.ctaButton.url}" style="color: #86C733; font-weight: bold; text-decoration: underline;">Let's talk</a>
+              </p>
+            </td>
+          </tr>
+
           <!-- Divider -->
           <tr>
             <td style="padding: 0 40px;">
@@ -170,6 +179,15 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
             <td class="content-padding" style="padding: 30px 40px;">
               <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; border-bottom: 2px solid #86C733; padding-bottom: 10px; font-family: Georgia, Times, serif;">Your Action Steps</h2>
               ${stepsHtml}
+            </td>
+          </tr>
+
+          <!-- Soft CTA 2 -->
+          <tr>
+            <td style="background-color: #f0f7e6; padding: 20px 40px; text-align: center;">
+              <p style="color: #1a4a6e; font-size: 14px; margin: 0; font-family: Georgia, Times, serif;">
+                Need help with your specific situation? <a href="${content.ctaButton.url}" style="color: #86C733; font-weight: bold; text-decoration: underline;">Schedule a quick call</a>
+              </p>
             </td>
           </tr>
 
