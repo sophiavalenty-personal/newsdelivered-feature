@@ -209,24 +209,6 @@ const Index = () => {
         )}
       </div>
 
-      {/* Instructions Footer */}
-      <div className="max-w-2xl mx-auto px-4 pb-8">
-        <div className="bg-background rounded-lg border p-6">
-          <h2 className="font-semibold text-foreground mb-3">How to use this newsletter:</h2>
-          <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
-            <li>Upload your logo using the "Upload Logo" button</li>
-            <li>Click "Edit" to customize any text content</li>
-            <li>Toggle between Desktop and Mobile views to preview responsiveness</li>
-            <li>When ready, click "Copy HTML" to copy the email-ready HTML</li>
-            <li>Paste the HTML into your ESP (Mailchimp, Constant Contact, etc.)</li>
-            <li>Replace placeholder links ({"{{CTA_LINK}}"}, {"{{UNSUBSCRIBE_LINK}}"}, etc.) with your actual URLs</li>
-          </ol>
-          
-          <div className="mt-4 p-3 bg-muted rounded text-xs text-muted-foreground">
-            <strong>Note:</strong> The exported HTML uses table-based layouts and inline CSS for maximum email client compatibility (Outlook, Gmail, Apple Mail, etc.)
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
