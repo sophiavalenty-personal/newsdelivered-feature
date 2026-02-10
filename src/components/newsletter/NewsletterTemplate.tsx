@@ -86,7 +86,7 @@ Don't let inherited IRA rules catch you off guard. The 10-year clock is ticking.
   },
   ctaButton: {
     text: "Book Your Tax Savings Strategy Session →",
-    url: "{{CTA_LINK}}"
+    url: "https://www.harikthompsoncpas.com/contact.html"
   },
   footer: {
     disclaimer: "This newsletter is for informational purposes only and does not constitute tax, legal, or financial advice. Please consult with a qualified professional regarding your specific situation.",
