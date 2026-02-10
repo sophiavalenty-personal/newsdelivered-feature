@@ -176,7 +176,7 @@ export const generateEmailHtml = (content: NewsletterContent, logoUrl?: string):
           <!-- Humor Section -->
           <tr>
             <td style="background-color: #f5f3ef; padding: 30px 40px; text-align: center;">
-              <h2 style="color: #1a4a6e; font-size: 20px; font-weight: bold; margin: 0 0 20px 0; font-family: Georgia, Times, serif;">A Moment of Levity</h2>
+              
               <table cellpadding="0" cellspacing="0" border="0" width="100%" role="presentation">
                 <tr>
                   <td style="background-color: #ffffff; padding: 20px; text-align: center; border: 2px dashed #86C733;">

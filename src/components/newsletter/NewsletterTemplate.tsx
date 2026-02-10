@@ -505,7 +505,7 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
           {/* Humor Section */}
           <tr>
             <td style={styles.humorSection}>
-              <h2 style={{ ...styles.sectionTitle, textAlign: 'center', borderBottom: 'none' }}>A Moment of Levity</h2>
+              
               <div style={{ 
                 backgroundColor: '#ffffff', 
                 padding: '20px', 
