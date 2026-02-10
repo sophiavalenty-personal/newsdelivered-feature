@@ -386,15 +386,7 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
           {/* Header */}
           <tr>
             <td style={styles.header}>
-              <img src={logoUrl || "/images/ht-logo-stacked-sm.jpg"} alt={content.firmName} style={{ maxWidth: '200px', marginBottom: '15px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
-              
-              <EditableText
-                value={content.preparedFor}
-                onChange={(v) => updateContent({ preparedFor: v })}
-                editable={editable}
-                style={styles.firmName}
-                as="h1"
-              />
+              <img src={logoUrl || "/images/ht-logo-stacked-sm.jpg"} alt={content.firmName} style={{ maxWidth: '250px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
             </td>
           </tr>
 
