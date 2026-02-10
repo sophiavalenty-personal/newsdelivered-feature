@@ -13,7 +13,7 @@ export interface NewsletterContent {
   contactEmail: string;
   contactPhone: string;
   websiteUrl: string;
-  headlines: { title: string; description: string }[];
+  headlines: { title: string; description: string; url?: string }[];
   story: {
     title: string;
     content: string;
@@ -44,7 +44,8 @@ export const defaultContent: NewsletterContent = {
   headlines: [
     {
       title: "Trump Tax Accounts Update",
-      description: "New guidance on retirement savings vehicles may impact your 2026 tax planning strategy."
+      description: "New guidance on retirement savings vehicles may impact your 2026 tax planning strategy.",
+      url: "/blog/trump-accounts"
     },
     {
       title: "RMD Rules for Inherited IRAs",
@@ -409,13 +410,25 @@ export const NewsletterTemplate: React.FC<NewsletterTemplateProps> = ({
               <h2 style={styles.sectionTitle}>Featured</h2>
               {content.headlines.map((headline, index) => (
                 <div key={index} style={styles.headline}>
-                  <EditableText
-                    value={headline.title}
-                    onChange={(v) => updateHeadline(index, 'title', v)}
-                    editable={editable}
-                    style={styles.headlineTitle}
-                    as="h3"
-                  />
+                  {headline.url ? (
+                    <a href={headline.url} style={{ textDecoration: 'none' }}>
+                      <EditableText
+                        value={headline.title}
+                        onChange={(v) => updateHeadline(index, 'title', v)}
+                        editable={editable}
+                        style={{ ...styles.headlineTitle, textDecoration: 'underline' }}
+                        as="h3"
+                      />
+                    </a>
+                  ) : (
+                    <EditableText
+                      value={headline.title}
+                      onChange={(v) => updateHeadline(index, 'title', v)}
+                      editable={editable}
+                      style={styles.headlineTitle}
+                      as="h3"
+                    />
+                  )}
                   <EditableText
                     value={headline.description}
                     onChange={(v) => updateHeadline(index, 'description', v)}
