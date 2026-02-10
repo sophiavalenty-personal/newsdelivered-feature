@@ -30,8 +30,8 @@ All colors MUST be HSL.
     --muted: 40 15% 96%;
     --muted-foreground: 215 15% 45%;
 
-    /* Warm gold accent - from website branding */
-    --accent: 40 75% 55%;
+    /* Lime green accent - from logo branding #86C733 */
+    --accent: 90 60% 49%;
     --accent-foreground: 215 25% 20%;
 
     --destructive: 0 84.2% 60.2%;
@@ -46,8 +46,8 @@ All colors MUST be HSL.
     /* Newsletter specific colors */
     --newsletter-header: 210 65% 28%;
     --newsletter-cta: 210 75% 45%;
-    --newsletter-section-bg: 40 20% 97%;
-    --newsletter-divider: 40 30% 85%;
+    --newsletter-section-bg: 90 20% 97%;
+    --newsletter-divider: 90 30% 85%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
